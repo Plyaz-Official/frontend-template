@@ -15,3 +15,11 @@ This is a starter template for a Next.js frontend app using TypeScript.
 ```bash
 npm install
 ```
+
+## Dependency Updates
+
+Dependencies can become outdated over time. To keep your project up to date and secure, regularly check for available updates:
+
+```bash
+npm outdated
+npm update
