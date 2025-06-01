@@ -1,5 +1,5 @@
 {
-  "name": "frontend-template",
+  "name": "@plyaz/fe-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
