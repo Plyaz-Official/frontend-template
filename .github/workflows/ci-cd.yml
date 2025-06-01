@@ -1,7 +1,10 @@
+# Below is disable as the repository will be attached directly to vercel to be automatically deployed
+
+
 deploy:
+  if: false
   needs: build
   runs-on: ubuntu-latest
-  if: github.ref == 'refs/heads/main'
   steps:
     - uses: actions/checkout@v3
     - uses: pnpm/action-setup@v2
