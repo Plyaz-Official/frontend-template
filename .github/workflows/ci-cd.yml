@@ -1,41 +1,9 @@
-name: CI/CD Pipeline
+name: Build and Deploy
 on:
   push:
     branches: [main, dev, staging]
-  pull_request:
-    branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
-      - run: pnpm install
-        env:
-          GITHUB_TOKEN: ${{ secrets.NPM_PRIVATE_PACKAGE_TOKEN }}
-      - run: pnpm build
-      - run: pnpm lint
-      - run: pnpm test
-
-# Below is disabled as the repository will be attached directly to vercel to be automatically deployed
-
-deploy:
-  if: false
-  needs: build
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v3
-    - uses: pnpm/action-setup@v2
-      with:
-        version: 8
-    - run: pnpm install
-    - name: Deploy to Vercel
-      uses: amondnet/vercel-action@v20
-      with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-        vercel-args: "--prod"
+  build-deploy:
+    uses: Plyaz-Official/devtools/.github/workflows/deploy.yml@main
+    secrets: inherit
