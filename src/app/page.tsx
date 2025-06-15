@@ -1,7 +1,7 @@
 import React from 'react';
 
-import UIPREVIEW from '@/components/UIPreview';
+import UiPreview from '@/components/UiPreview';
 
 export default function Home(): React.ReactElement {
-  return <UIPREVIEW />;
+  return <UiPreview />;
 }

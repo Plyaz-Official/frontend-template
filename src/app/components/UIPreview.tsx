@@ -14,17 +14,21 @@ import {
 } from '@plyaz/ui';
 import React from 'react';
 
-const UIPREVIEW = () => {
+const UiPreview = () => {
   return (
     <Box element='main' className='min-h-screen bg-white text-gray-900'>
       {/* Navigation */}
       <Box element='header' className='border-b bg-black py-4 text-white'>
         <Box element='nav' className='px-6'>
           <Flex justify='between' align='center'>
-            <Heading element='h1' size='xs' className={`
+            <Heading
+              element='h1'
+              size='xs'
+              className={`
               tracking-wide text-white
               md:text-xl
-            `}>
+            `}
+            >
               UI Components
             </Heading>
             <Flex align='center' gap='gap-3' className='md:gap-3'>
@@ -35,27 +39,23 @@ const UIPREVIEW = () => {
                     size='sm'
                     weight='medium'
                     variant='body'
-                    className={
-                      `
+                    className={`
                         cursor-pointer transition-colors duration-200
                         hover:text-gray-300
                         md:text-lg
-                      `
-                    }
+                      `}
                   >
                     {item}
                   </Text>
                 </ExternalLink>
               ))}
               <button
-                className={
-                  `
+                className={`
                     hidden rounded-lg bg-blue-600 px-4 py-2 text-white
                     transition-colors duration-200
                     hover:bg-blue-700
                     md:block
-                  `
-                }
+                  `}
               >
                 Get Started
               </button>
@@ -65,39 +65,56 @@ const UIPREVIEW = () => {
       </Box>
 
       {/* Hero Section */}
-      <Section className={`
+      <Section
+        className={`
         py-10
         md:py-20
-      `}>
+      `}
+      >
         <Container>
-          <Stack className={`
+          <Stack
+            className={`
             items-center gap-2
             lg:flex-row
-          `}  direction='vertical'>
-            <Heading element='h1' size='xl' className={`
+          `}
+            direction='vertical'
+          >
+            <Heading
+              element='h1'
+              size='xl'
+              className={`
               text-center font-bold tracking-tight
               lg:text-3xl
-            `}>
+            `}
+            >
               Build Beautiful UIs with Reusable Components
             </Heading>
-            <Paragraph size='lg' color='muted' className={`
+            <Paragraph
+              size='lg'
+              color='muted'
+              className={`
               mx-auto max-w-3xl text-center
-            `}>
+            `}
+            >
               A React + TypeScript-based component library with flexible, composable building blocks
               that scale with your product.
             </Paragraph>
             <Flex gap='gap-2' justify='center' wrap='wrap'>
-              <button className={`
+              <button
+                className={`
                 w-44 rounded-lg bg-blue-600 px-6 py-3 text-white transition
                 hover:bg-blue-700
-              `}>
+              `}
+              >
                 Get Started
               </button>
               <ExternalLink href='https://github.com'>
-                <button className={`
+                <button
+                  className={`
                   w-44 rounded-lg border border-gray-300 px-6 py-3 transition
                   hover:bg-gray-100
-                `}>
+                `}
+                >
                   View on GitHub
                 </button>
               </ExternalLink>
@@ -107,10 +124,12 @@ const UIPREVIEW = () => {
       </Section>
 
       {/* Features Section */}
-      <Section className={`
+      <Section
+        className={`
         bg-gray-50 py-10
         md:py-20
-      `}>
+      `}
+      >
         <Container>
           <Stack direction='vertical' spacing='gap-4'>
             <Box className='text-center'>
@@ -160,9 +179,13 @@ const UIPREVIEW = () => {
               { number: '∞', label: 'Possibilities', desc: 'Creative freedom' },
             ].map((stat, index) => (
               <Box key={index} className='text-center'>
-                <Heading element='h3' size='4xl' className={`
+                <Heading
+                  element='h3'
+                  size='4xl'
+                  className={`
                   mb-2 font-bold text-blue-600
-                `}>
+                `}
+                >
                   {stat.number}
                 </Heading>
                 <Text element='p' size='lg' weight='semibold' variant='body'>
@@ -178,28 +201,35 @@ const UIPREVIEW = () => {
       </Section>
 
       {/* Code Preview / Feature Callout */}
-      <Section className={`
+      <Section
+        className={`
         py-10
         md:py-20
-      `}>
+      `}
+      >
         <Container>
           <Grid cols='grid-cols-1 lg:grid-cols-2' justify='center' align='center' gap='gap-2'>
             <Stack className='items-center' direction='vertical'>
               <Heading element='h2' size='xl' className='font-semibold'>
                 Simple. Powerful. Flexible.
               </Heading>
-              <Paragraph size='sm' className={`
+              <Paragraph
+                size='sm'
+                className={`
                 text-justify
                 md:text-base
-              `}>
+              `}
+              >
                 Every component is powered by our base <code>Box</code> component, giving you full
                 control with consistent props and clean design.
               </Paragraph>
             </Stack>
-            <Stack className={`
+            <Stack
+              className={`
               flex-wrap
               lg:flex-nowrap
-            `}>
+            `}
+            >
               <Text
                 element='p'
                 size='sm'
@@ -214,7 +244,7 @@ const UIPREVIEW = () => {
               </Text>
               <Text
                 element='p'
-                 size='sm'
+                size='sm'
                 weight='medium'
                 variant='body'
                 className={`
@@ -243,28 +273,42 @@ const UIPREVIEW = () => {
 
       {/* CTA */}
       <Box element='footer' className='bg-blue-600 px-6 py-4 text-white'>
-        <Stack spacing='gap-2' className={`
+        <Stack
+          spacing='gap-2'
+          className={`
           flex-col items-center justify-between
           md:flex-row
-        `}>
+        `}
+        >
           <Heading element='h2' size='xl' className='text-center font-bold'>
             Ready to Get Started?
           </Heading>
-          <Flex gap='gap-2' justify='center' align='center' direction='col' className={`
+          <Flex
+            gap='gap-2'
+            justify='center'
+            align='center'
+            direction='col'
+            className={`
             md:flex-row
-          `}>
-            <Paragraph size='xs' className={`
+          `}
+          >
+            <Paragraph
+              size='xs'
+              className={`
               max-w-xl text-center
               lg:text-sm
-            `}>
+            `}
+            >
               Join thousands of developers building with the @plyaz/ui library. It&apos;s time to
               bring consistency, speed, and elegance to your app.
             </Paragraph>
-            <button className={`
+            <button
+              className={`
               rounded-lg bg-white px-6 py-3 font-semibold text-blue-600
               transition
               hover:bg-gray-100
-            `}>
+            `}
+            >
               Start Building
             </button>
           </Flex>
@@ -274,4 +318,4 @@ const UIPREVIEW = () => {
   );
 };
 
-export default UIPREVIEW;
+export default UiPreview;
