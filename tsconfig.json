@@ -1,18 +1,22 @@
 {
   "extends": "@plyaz/devtools/configs/tsconfig.base.json",
   "compilerOptions": {
-    "moduleResolution": "bundler", // To fix the Next.js compatibility
     "outDir": "dist",
-    "rootDir": "src",
     "composite": true,
     "allowJs": true,
     "incremental": true,
     "jsx": "preserve",
+    "moduleResolution": "bundler",
     "plugins": [
       {
         "name": "next"
       }
     ]
   },
-  "include": ["src", ".next/types/**/*.ts"]
+  "include": [
+    "./src/**/*",
+    "src/tests/**/*",
+    ".next/types/**/*.ts",
+    "*.ts"
+  ],
 }
