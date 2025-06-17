@@ -1,3 +1,13 @@
-export default {
-  extends: ["@playz/devtools/eslint/base.nextjs.cjs"],
-};
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+import { createBaseConfig } from '@plyaz/devtools/eslint/base.nextjs.mjs';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default createBaseConfig({
+  tsconfigDir: __dirname,
+  cssFilePath: './src/app/globals.css',
+  tailwindConfig: './tailwind.config.ts',
+});

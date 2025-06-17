@@ -1,0 +1,9 @@
+name: Security
+on:
+  push:
+    branches: [main]
+
+jobs:
+  publish:
+    uses: Plyaz-Official/devtools/.github/workflows/security.yml@main
+    secrets: inherit

@@ -1,7 +1,3 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  reactStrictMode: true,
-};
+import nextConfig from '@plyaz/devtools/configs/next.config';
 
 export default nextConfig;

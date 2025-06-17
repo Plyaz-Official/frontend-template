@@ -2,11 +2,11 @@
   "extends": "@plyaz/devtools/configs/tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src",
     "composite": true,
     "allowJs": true,
     "incremental": true,
     "jsx": "preserve",
+    "moduleResolution": "bundler",
     "plugins": [
       {
         "name": "next"
@@ -14,7 +14,9 @@
     ]
   },
   "include": [
-    "src",
-    ".next/types/**/*.ts"
-  ]
+    "./src/**/*",
+    "src/tests/**/*",
+    ".next/types/**/*.ts",
+    "*.ts"
+  ],
 }
