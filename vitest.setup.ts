@@ -1,1 +1,1 @@
-import '@plyaz/devtools/configs/vitest.setup.ts';
+import '@plyaz/devtools/configs/vitest.setup';
