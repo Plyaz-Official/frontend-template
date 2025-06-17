@@ -19,4 +19,11 @@
     ".next/types/**/*.ts",
     "*.ts"
   ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "coverage",
+    "vitest.config.ts",
+  ]
 }
