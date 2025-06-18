@@ -65,7 +65,7 @@ Then:
 
 ## 🛠 Dev Requirements
 
-* [Node.js v20+](https://nodejs.org/)
+* [Node.js v22.4.0+](https://nodejs.org/)
 * [pnpm v8+](https://pnpm.io/)
 * [VSCode](https://code.visualstudio.com/) with recommended extensions
 * [@plyaz/devtools](https://github.com/Plyaz-Official/devtools) for linting, formatting, and CI standards
@@ -131,4 +131,3 @@ For internal team standards, visit the [Plyaz Confluence Documentation](https://
 ## 🧠 License & Ownership
 
 This repository is internal to the Plyaz platform. All components, utilities, and configs are governed by the Plyaz engineering guidelines.
-```
