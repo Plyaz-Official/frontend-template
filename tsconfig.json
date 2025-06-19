@@ -15,13 +15,14 @@
   },
   "include": [
     "./src/**/*",
-    "src/tests/**/*",
-    ".next/types/**/*.ts"
+    "./tests/**/*",
+    ".next/types/**/*.ts",
+    "*.ts"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "build",
-    "coverage",
+    "coverage"
   ]
 }
