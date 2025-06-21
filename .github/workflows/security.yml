@@ -1,9 +1,19 @@
 name: Security
 on:
   push:
-    branches: [main]
+    branches: [main, dev, staging]
+  pull_request:
+    branches: [main, dev, staging]
+
+permissions:
+  contents: read
+  pull-requests: write      # Required for posting dependency review comments
+  security-events: write    # Required for OSV-Scanner SARIF uploads
+  actions: read            # Required for OSV-Scanner
 
 jobs:
-  publish:
+  security:
     uses: Plyaz-Official/devtools/.github/workflows/security.yml@main
+    with:
+      skip_osv_scan: true
     secrets: inherit

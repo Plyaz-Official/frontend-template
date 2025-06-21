@@ -37,8 +37,8 @@ importers:
         specifier: ^15.0.3
         version: 15.3.3
       '@plyaz/devtools':
-        specifier: ^1.2.17
-        version: 1.2.17(de4f0505d922c896ccbafb4dca6ab12a)
+        specifier: ^1.2.33
+        version: 1.2.33(de4f0505d922c896ccbafb4dca6ab12a)
       '@tailwindcss/postcss':
         specifier: ^4.1.8
         version: 4.1.10
@@ -742,8 +742,8 @@ packages:
     resolution: {integrity: sha512-YLT9Zo3oNPJoBjBc4q8G2mjU4tqIbf5CEOORbUUr48dCD9q3umJ3IPlVqOqDakPfd2HuwccBaqlGhN4Gmr5OWg==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@plyaz/devtools@1.2.17':
-    resolution: {integrity: sha512-jpf9kqDMIHGEdJzhc/NhKQvn2WunTWs7Gof5dhHIiten1kfZKHdJbnwSxH+L8xQO4lQZUA+0HXK5dcVjh7QkJw==}
+  '@plyaz/devtools@1.2.33':
+    resolution: {integrity: sha512-QKenkbd5MJgrOeGxl33ZfQklUFrfcwxk0fDiy3JgWJJJRKQWA8/zHzzMmBsAc1vnFhlWTvAn24aZA3nIOXCGAw==}
     peerDependencies:
       '@darraghor/eslint-plugin-nestjs-typed': ^6.6.0
       '@typescript-eslint/eslint-plugin': ^8.0.0
@@ -4858,7 +4858,7 @@ snapshots:
 
   '@pkgr/core@0.2.7': {}
 
-  '@plyaz/devtools@1.2.17(de4f0505d922c896ccbafb4dca6ab12a)':
+  '@plyaz/devtools@1.2.33(de4f0505d922c896ccbafb4dca6ab12a)':
     dependencies:
       '@darraghor/eslint-plugin-nestjs-typed': 6.6.2(@typescript-eslint/parser@8.34.0(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(class-validator@0.14.2)(eslint-import-resolver-typescript@3.10.1)(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3)
       '@typescript-eslint/eslint-plugin': 8.34.0(@typescript-eslint/parser@8.34.0(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3)
