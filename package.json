@@ -8,7 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "test": "vitest",
+    "test": "vitest run --no-watch",
+    "test:ci": "vitest run --no-watch",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
     "format": "prettier --write './**/*.{js,ts,tsx,js,jsx,mjs,cjs}'",
     "format:check": "prettier --check './**/*.{js,ts,tsx,js,jsx,mjs,cjs}'",
     "type:check": "tsc --noEmit"
