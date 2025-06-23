@@ -11,5 +11,5 @@ export default presets.nextjs({
   enableReact: false,
   enableReactRefresh: false,
   tsconfigDir: __dirname,
-  enableImport: false,
+  enableImport: true,
 });
