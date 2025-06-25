@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 import {
   Box,
@@ -13,7 +14,7 @@ import {
 } from '@plyaz/ui';
 import React from 'react';
 
-const UI_PREVIEW = () => {
+const UIPREVIEW = () => {
   return (
     <Box element='main' className='min-h-screen bg-white text-gray-900'>
       {/* Navigation */}
@@ -273,4 +274,4 @@ const UI_PREVIEW = () => {
   );
 };
 
-export default UI_PREVIEW;
+export default UIPREVIEW;
