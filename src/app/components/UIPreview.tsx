@@ -20,21 +20,25 @@ const UI_PREVIEW = () => {
       <Box element='header' className='border-b bg-black py-4 text-white'>
         <Box element='nav' className='px-6'>
           <Flex justify='between' align='center'>
-            <Heading element='h1' size='xl' className='tracking-wide text-white'>
+            <Heading element='h1' size='xs' className={`
+              tracking-wide text-white
+              md:text-xl
+            `}>
               UI Components
             </Heading>
-            <Flex align='center' gap='gap-3'>
+            <Flex align='center' gap='gap-3' className='md:gap-3'>
               {['Portfolio', 'Dashboard', 'Blog'].map(item => (
                 <ExternalLink key={item} href={`#`}>
                   <Text
                     element='p'
-                    size='lg'
+                    size='sm'
                     weight='medium'
                     variant='body'
                     className={
                       `
                         cursor-pointer transition-colors duration-200
                         hover:text-gray-300
+                        md:text-lg
                       `
                     }
                   >
@@ -45,9 +49,10 @@ const UI_PREVIEW = () => {
               <button
                 className={
                   `
-                    rounded-lg bg-blue-600 px-4 py-2 text-white
+                    hidden rounded-lg bg-blue-600 px-4 py-2 text-white
                     transition-colors duration-200
                     hover:bg-blue-700
+                    md:block
                   `
                 }
               >
@@ -59,11 +64,18 @@ const UI_PREVIEW = () => {
       </Box>
 
       {/* Hero Section */}
-      <Section className='py-20'>
+      <Section className={`
+        py-10
+        md:py-20
+      `}>
         <Container>
-          <Stack className='items-center'>
-            <Heading element='h1' size='4xl' className={`
+          <Stack className={`
+            items-center gap-2
+            lg:flex-row
+          `}  direction='vertical'>
+            <Heading element='h1' size='xl' className={`
               text-center font-bold tracking-tight
+              lg:text-3xl
             `}>
               Build Beautiful UIs with Reusable Components
             </Heading>
@@ -94,7 +106,10 @@ const UI_PREVIEW = () => {
       </Section>
 
       {/* Features Section */}
-      <Section className='bg-gray-50 py-16'>
+      <Section className={`
+        bg-gray-50 py-10
+        md:py-20
+      `}>
         <Container>
           <Stack direction='vertical' spacing='gap-4'>
             <Box className='text-center'>
@@ -162,43 +177,61 @@ const UI_PREVIEW = () => {
       </Section>
 
       {/* Code Preview / Feature Callout */}
-      <Section className='py-16'>
+      <Section className={`
+        py-10
+        md:py-20
+      `}>
         <Container>
-          <Grid cols='grid-cols-1 lg:grid-cols-2' justify='center' align='center' gap='gap-4'>
-            <Stack className='items-center'>
+          <Grid cols='grid-cols-1 lg:grid-cols-2' justify='center' align='center' gap='gap-2'>
+            <Stack className='items-center' direction='vertical'>
               <Heading element='h2' size='xl' className='font-semibold'>
                 Simple. Powerful. Flexible.
               </Heading>
-              <Paragraph size='base'>
+              <Paragraph size='sm' className={`
+                text-justify
+                md:text-base
+              `}>
                 Every component is powered by our base <code>Box</code> component, giving you full
                 control with consistent props and clean design.
               </Paragraph>
             </Stack>
-            <Stack>
+            <Stack className={`
+              flex-wrap
+              lg:flex-nowrap
+            `}>
               <Text
                 element='p'
-                size='base'
+                size='sm'
                 weight='medium'
                 variant='body'
-                className='text-center text-gray-800'
+                className={`
+                  text-center text-gray-800
+                  md:text-base
+                `}
               >
                 ✓ Consistent API design
               </Text>
               <Text
                 element='p'
-                size='base'
+                 size='sm'
                 weight='medium'
                 variant='body'
-                className='text-center text-gray-800'
+                className={`
+                  text-center text-gray-800
+                  md:text-base
+                `}
               >
                 ✓ Semantic HTML structure
               </Text>
               <Text
                 element='p'
-                size='base'
+                size='sm'
                 weight='medium'
                 variant='body'
-                className='text-center text-gray-800'
+                className={`
+                  text-center text-gray-800
+                  md:text-base
+                `}
               >
                 ✓ Tailwind utilities under the hood
               </Text>
@@ -209,12 +242,20 @@ const UI_PREVIEW = () => {
 
       {/* CTA */}
       <Box element='footer' className='bg-blue-600 px-6 py-4 text-white'>
-        <Stack spacing='gap-2' className='items-center justify-between'>
-          <Heading element='h2' size='3xl' className='text-center font-bold'>
+        <Stack spacing='gap-2' className={`
+          flex-col items-center justify-between
+          md:flex-row
+        `}>
+          <Heading element='h2' size='xl' className='text-center font-bold'>
             Ready to Get Started?
           </Heading>
-          <Flex gap='gap-2' justify='center' align='center'>
-            <Paragraph size='lg' className='max-w-xl text-center'>
+          <Flex gap='gap-2' justify='center' align='center' direction='col' className={`
+            md:flex-row
+          `}>
+            <Paragraph size='xs' className={`
+              max-w-xl text-center
+              lg:text-sm
+            `}>
               Join thousands of developers building with the @plyaz/ui library. It&apos;s time to
               bring consistency, speed, and elegance to your app.
             </Paragraph>
