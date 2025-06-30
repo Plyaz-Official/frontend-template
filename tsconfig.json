@@ -8,11 +8,13 @@
     "jsx": "preserve",
     "moduleResolution": "bundler",
     "baseUrl": ".",
-    "paths" : {
-         "@/*" : ["./src/app/*"]
+    "paths": {
+      "@/*": [
+        "./src/app/*"
+      ]
     },
     "plugins": [
-      {
+            {
         "name": "next"
       }
     ]

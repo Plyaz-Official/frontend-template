@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@plyaz/devtools':
-        specifier: ^1.4.2
-        version: 1.4.2(d868714587259769a12262b005c09990)
+        specifier: ^1.5.0
+        version: 1.5.0(d868714587259769a12262b005c09990)
       '@plyaz/ui':
         specifier: ^0.1.20
         version: 0.1.20(3dd48a5bf05c76957d964347914544c2)
@@ -765,8 +765,8 @@ packages:
     resolution: {integrity: sha512-YLT9Zo3oNPJoBjBc4q8G2mjU4tqIbf5CEOORbUUr48dCD9q3umJ3IPlVqOqDakPfd2HuwccBaqlGhN4Gmr5OWg==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@plyaz/devtools@1.4.2':
-    resolution: {integrity: sha512-oPsQF9H1Bii/h9PUpYzJ8NoQr55lchQ3lssijgDwbt9rEPVZgQS9Cy6CXin00H0/88SFmQTdoYMr/S0L6TxPHA==}
+  '@plyaz/devtools@1.5.0':
+    resolution: {integrity: sha512-MoPAMNlCx/Dk0ZdeGFWhiRhYis8k/9717wCKF3W8WWFSPK5/qs+uwMGOHuP/wb8dWybCG18+WjzpdVDf5WGK2A==}
     peerDependencies:
       '@darraghor/eslint-plugin-nestjs-typed': ^6.6.0
       '@typescript-eslint/eslint-plugin': ^8.0.0
@@ -4996,7 +4996,7 @@ snapshots:
 
   '@pkgr/core@0.2.7': {}
 
-  '@plyaz/devtools@1.4.2(d868714587259769a12262b005c09990)':
+  '@plyaz/devtools@1.5.0(d868714587259769a12262b005c09990)':
     dependencies:
       '@darraghor/eslint-plugin-nestjs-typed': 6.6.2(@typescript-eslint/parser@8.34.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(class-validator@0.14.2)(eslint-import-resolver-typescript@3.10.1)(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)
       '@typescript-eslint/eslint-plugin': 8.34.0(@typescript-eslint/parser@8.34.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)
@@ -5012,7 +5012,7 @@ snapshots:
 
   '@plyaz/ui@0.1.20(3dd48a5bf05c76957d964347914544c2)':
     dependencies:
-      '@plyaz/devtools': 1.4.2(d868714587259769a12262b005c09990)
+      '@plyaz/devtools': 1.5.0(d868714587259769a12262b005c09990)
       '@tailwindcss/vite': 4.1.10(vite@6.3.5(@types/node@22.15.32)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.8.0))
       '@testing-library/jest-dom': 6.6.3
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
