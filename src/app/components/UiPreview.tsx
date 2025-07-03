@@ -15,9 +15,9 @@ import React from 'react';
 
 const UiPreview = () => {
   return (
-    <Box element='main' className='min-h-screen bg-white text-gray-900'>
+    <Box element='main' className='bg-white min-h-screen text-gray-900'>
       {/* Navigation */}
-      <Box element='header' className='border-b bg-black py-4 text-white'>
+      <Box element='header' className='bg-black py-4 border-b text-white'>
         <Box element='nav' className='px-6'>
           <Flex justify='between' align='center'>
             <Heading
@@ -88,11 +88,7 @@ const UiPreview = () => {
             >
               Build Beautiful UIs with Reusable Components
             </Heading>
-            <Paragraph
-              size='lg'
-              color='muted'
-              className={`mx-auto max-w-3xl text-center`}
-            >
+            <Paragraph size='lg' color='muted' className={`mx-auto max-w-3xl text-center`}>
               A React + TypeScript-based component library with flexible, composable building blocks
               that scale with your product.
             </Paragraph>
@@ -176,11 +172,7 @@ const UiPreview = () => {
               { number: '∞', label: 'Possibilities', desc: 'Creative freedom' },
             ].map((stat, index) => (
               <Box key={index} className='text-center'>
-                <Heading
-                  element='h3'
-                  size='4xl'
-                  className={`mb-2 font-bold text-blue-600`}
-                >
+                <Heading element='h3' size='4xl' className={`mb-2 font-bold text-blue-600`}>
                   {stat.number}
                 </Heading>
                 <Text element='p' size='lg' weight='semibold' variant='body'>
@@ -275,7 +267,7 @@ const UiPreview = () => {
             md:flex-row
           `}
         >
-          <Heading element='h2' size='xl' className='text-center font-bold'>
+          <Heading element='h2' size='xl' className='font-bold text-center'>
             Ready to Get Started?
           </Heading>
           <Flex
