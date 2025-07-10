@@ -1,6 +1,7 @@
 'use client';
 import {
   Box,
+  Button,
   Container,
   ExternalLink,
   Flex,
@@ -8,8 +9,14 @@ import {
   Heading,
   Paragraph,
   Section,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
   Stack,
   Text,
+
 } from '@plyaz/ui';
 import React from 'react';
 
@@ -30,7 +37,7 @@ const UiPreview = () => {
             >
               UI Components
             </Heading>
-            <Flex align='center' gap='gap-3' className='md:gap-3'>
+            <Flex align='center' gap='3' className='md:gap-3'>
               {['Portfolio', 'Dashboard', 'Blog'].map(item => (
                 <ExternalLink key={item} href={`#`}>
                   <Text
@@ -62,8 +69,21 @@ const UiPreview = () => {
           </Flex>
         </Box>
       </Box>
-
+<Select >
+  <SelectTrigger className="w-[180px]">
+    <SelectValue placeholder="Theme" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="light">Light</SelectItem>
+    <SelectItem value="dark">Dark</SelectItem>
+    <SelectItem value="system">System</SelectItem>
+  </SelectContent>
+</Select>
+      <Button variant={"secondary"}>
+        PLyaz
+      </Button>
       {/* Hero Section */}
+    
       <Section
         className={`
           py-10
@@ -92,7 +112,7 @@ const UiPreview = () => {
               A React + TypeScript-based component library with flexible, composable building blocks
               that scale with your product.
             </Paragraph>
-            <Flex gap='gap-2' justify='center' wrap='wrap'>
+            <Flex gap='2' justify='center' wrap='wrap'>
               <button
                 className={`
                   w-44 rounded-lg bg-blue-600 px-6 py-3 text-white transition
@@ -134,7 +154,7 @@ const UiPreview = () => {
               </Paragraph>
             </Box>
 
-            <Grid cols='grid-cols-1 md:grid-cols-2 lg:grid-cols-4' gap='gap-2'>
+            <Grid  gap='2' className='grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
               {[
                 { title: 'Lightning Fast', desc: 'Optimized with tiny bundles and zero bloat.' },
                 { title: 'Type Safe', desc: '100% TypeScript with full IntelliSense support.' },
@@ -165,7 +185,7 @@ const UiPreview = () => {
       {/* Stats */}
       <Section className='py-12'>
         <Container>
-          <Grid cols='grid-cols-1 md:grid-cols-3' gap='2rem'>
+          <Grid  gap='2' className='grid-cols-1 md:grid-cols-3'>
             {[
               { number: '10+', label: 'Components', desc: 'Ready to use' },
               { number: '100%', label: 'TypeScript', desc: 'Type coverage' },
@@ -195,7 +215,7 @@ const UiPreview = () => {
         `}
       >
         <Container>
-          <Grid cols='grid-cols-1 lg:grid-cols-2' justify='center' align='center' gap='gap-2'>
+          <Grid className='grid-cols-1 lg:grid-cols-2' justify='center' align='center' gap='2'>
             <Stack className='items-center' direction='vertical'>
               <Heading element='h2' size='xl' className='font-semibold'>
                 Simple. Powerful. Flexible.
@@ -271,7 +291,7 @@ const UiPreview = () => {
             Ready to Get Started?
           </Heading>
           <Flex
-            gap='gap-2'
+            gap='2'
             justify='center'
             align='center'
             direction='col'
