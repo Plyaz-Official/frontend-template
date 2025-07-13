@@ -24,8 +24,11 @@
   },
   "dependencies": {
     "@plyaz/devtools": "^1.6.4",
+    "@plyaz/types": "^2.0.0",
     "@plyaz/ui": "^0.4.7",
+    "@plyaz/translations": "^1.1.0",
     "next": "15.3.3",
+    "next-intl": "^4.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

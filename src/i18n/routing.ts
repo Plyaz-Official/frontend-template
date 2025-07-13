@@ -1,0 +1,1 @@
+export { routing } from '@plyaz/translations/routing';

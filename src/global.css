@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@source "../node_modules/@plyaz/ui/**/*.{js,ts,jsx,tsx}";
+@import "../node_modules/@plyaz/ui/dist/ui.css";
+
+
+
