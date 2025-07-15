@@ -19,8 +19,6 @@ import {
 } from '@plyaz/ui';
 import React from 'react';
 
-import LanguageSelectorWrapper from 'src/components/LanguageSelector';
-
 const UiPreview = () => {
   return (
     <Box element='main' className='min-h-screen bg-white text-gray-900'>
@@ -28,7 +26,6 @@ const UiPreview = () => {
       <Box element='header' className='border-b bg-black py-4 text-white'>
         <Box element='nav' className='px-6'>
           <Flex justify='between' align='center'>
-            <LanguageSelectorWrapper />
             <Heading
               element='h1'
               size='xs'

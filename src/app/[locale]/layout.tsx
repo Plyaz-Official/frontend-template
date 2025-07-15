@@ -2,10 +2,11 @@ import { type Metadata } from 'next';
 import React from 'react';
 import '../../global.css';
 import { notFound } from 'next/navigation';
-import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { hasLocale } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
+import Providers from 'src/components/Providers';
 import { routing } from 'src/i18n/routing';
-import TranslationProviderClient from 'src/components/TranslationProviderClient';
 
 export const metadata: Metadata = {
   title: 'Plyaz Fe Template',
@@ -23,12 +24,13 @@ export default async function RootLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+  const messages = await getMessages();
   return (
     <html lang={locale}>
       <body>
-        <NextIntlClientProvider>
-          <TranslationProviderClient>{children}</TranslationProviderClient>
-        </NextIntlClientProvider>
+        <Providers messages={messages} locale={locale}>
+          {children}
+        </Providers>
       </body>
     </html>
   );
