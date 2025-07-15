@@ -2,8 +2,8 @@
 import type { Messages } from 'next-intl';
 import { NextIntlClientProvider } from 'next-intl';
 import type { SupportedLanguage } from '@plyaz/types';
-
-import TranslationProviderClient from './TranslationProviderClient';
+import { TranslationProvider } from '@plyaz/translations/frontend';
+import config from '@plyaz/translations/config';
 
 export default function Providers({
   children,
@@ -16,7 +16,13 @@ export default function Providers({
 }) {
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
-      <TranslationProviderClient>{children}</TranslationProviderClient>
+      <TranslationProvider
+        config={{
+          ...config,
+        }}
+      >
+        {children}
+      </TranslationProvider>
     </NextIntlClientProvider>
   );
 }
