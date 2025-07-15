@@ -16,15 +16,14 @@ import {
   SelectValue,
   Stack,
   Text,
-
 } from '@plyaz/ui';
 import React from 'react';
 
 const UiPreview = () => {
   return (
-    <Box element='main' className='bg-white min-h-screen text-gray-900'>
+    <Box element='main' className='min-h-screen bg-white text-gray-900'>
       {/* Navigation */}
-      <Box element='header' className='bg-black py-4 border-b text-white'>
+      <Box element='header' className='border-b bg-black py-4 text-white'>
         <Box element='nav' className='px-6'>
           <Flex justify='between' align='center'>
             <Heading
@@ -69,21 +68,19 @@ const UiPreview = () => {
           </Flex>
         </Box>
       </Box>
-<Select >
-  <SelectTrigger className="w-[180px]">
-    <SelectValue placeholder="Theme" />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectItem value="light">Light</SelectItem>
-    <SelectItem value="dark">Dark</SelectItem>
-    <SelectItem value="system">System</SelectItem>
-  </SelectContent>
-</Select>
-      <Button variant={"secondary"}>
-        PLyaz
-      </Button>
+      <Select>
+        <SelectTrigger className='w-[180px]'>
+          <SelectValue placeholder='Theme' />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value='light'>Light</SelectItem>
+          <SelectItem value='dark'>Dark</SelectItem>
+          <SelectItem value='system'>System</SelectItem>
+        </SelectContent>
+      </Select>
+      <Button variant={'secondary'}>PLyaz</Button>
       {/* Hero Section */}
-    
+
       <Section
         className={`
           py-10
@@ -108,7 +105,13 @@ const UiPreview = () => {
             >
               Build Beautiful UIs with Reusable Components
             </Heading>
-            <Paragraph size='lg' color='muted' className={`mx-auto max-w-3xl text-center`}>
+            <Paragraph
+              size='lg'
+              color='muted'
+              className={`
+              mx-auto max-w-3xl text-center
+            `}
+            >
               A React + TypeScript-based component library with flexible, composable building blocks
               that scale with your product.
             </Paragraph>
@@ -154,7 +157,14 @@ const UiPreview = () => {
               </Paragraph>
             </Box>
 
-            <Grid  gap='2' className='grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
+            <Grid
+              gap='2'
+              className={`
+              grid-cols-1
+              md:grid-cols-2
+              lg:grid-cols-4
+            `}
+            >
               {[
                 { title: 'Lightning Fast', desc: 'Optimized with tiny bundles and zero bloat.' },
                 { title: 'Type Safe', desc: '100% TypeScript with full IntelliSense support.' },
@@ -185,14 +195,26 @@ const UiPreview = () => {
       {/* Stats */}
       <Section className='py-12'>
         <Container>
-          <Grid  gap='2' className='grid-cols-1 md:grid-cols-3'>
+          <Grid
+            gap='2'
+            className={`
+            grid-cols-1
+            md:grid-cols-3
+          `}
+          >
             {[
               { number: '10+', label: 'Components', desc: 'Ready to use' },
               { number: '100%', label: 'TypeScript', desc: 'Type coverage' },
               { number: '∞', label: 'Possibilities', desc: 'Creative freedom' },
             ].map((stat, index) => (
               <Box key={index} className='text-center'>
-                <Heading element='h3' size='4xl' className={`mb-2 font-bold text-blue-600`}>
+                <Heading
+                  element='h3'
+                  size='4xl'
+                  className={`
+                  mb-2 font-bold text-blue-600
+                `}
+                >
                   {stat.number}
                 </Heading>
                 <Text element='p' size='lg' weight='semibold' variant='body'>
@@ -215,7 +237,15 @@ const UiPreview = () => {
         `}
       >
         <Container>
-          <Grid className='grid-cols-1 lg:grid-cols-2' justify='center' align='center' gap='2'>
+          <Grid
+            className={`
+            grid-cols-1
+            lg:grid-cols-2
+          `}
+            justify='center'
+            align='center'
+            gap='2'
+          >
             <Stack className='items-center' direction='vertical'>
               <Heading element='h2' size='xl' className='font-semibold'>
                 Simple. Powerful. Flexible.
@@ -287,16 +317,10 @@ const UiPreview = () => {
             md:flex-row
           `}
         >
-          <Heading element='h2' size='xl' className='font-bold text-center'>
+          <Heading element='h2' size='xl' className='text-center font-bold'>
             Ready to Get Started?
           </Heading>
-          <Flex
-            gap='2'
-            justify='center'
-            align='center'
-            direction='col'
-            className={`md:flex-row`}
-          >
+          <Flex gap='2' justify='center' align='center' direction='col' className={`md:flex-row`}>
             <Paragraph
               size='xs'
               className={`
