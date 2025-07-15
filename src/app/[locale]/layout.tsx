@@ -17,9 +17,9 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }>): Promise<React.ReactElement> {
-  const {locale} = await params;
+  const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -27,11 +27,9 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider>
-          <TranslationProviderClient>
-            {children}
-          </TranslationProviderClient>
+          <TranslationProviderClient>{children}</TranslationProviderClient>
         </NextIntlClientProvider>
       </body>
     </html>
-    );
+  );
 }

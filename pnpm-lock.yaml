@@ -12,14 +12,14 @@ importers:
         specifier: ^1.6.4
         version: 1.6.11(eab7f0d77d3b50312a5ec47140474ff6)
       '@plyaz/translations':
-        specifier: ^1.1.0
-        version: 1.1.0(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.2(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(nestjs-i18n@10.5.1(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.2(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(class-validator@0.14.2)(rxjs@7.8.2))(next-intl@4.3.4(next@15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)(typescript@5.8.3))(react@19.1.0)(reflect-metadata@0.2.2)
+        specifier: ^1.2.0
+        version: 1.2.0(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.2(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(nestjs-i18n@10.5.1(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.2(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(class-validator@0.14.2)(rxjs@7.8.2))(next-intl@4.3.4(next@15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)(typescript@5.8.3))(react@19.1.0)(reflect-metadata@0.2.2)
       '@plyaz/types':
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^1.1.3
+        version: 1.1.3(next@15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@plyaz/ui':
-        specifier: ^0.4.7
-        version: 0.4.7(89b4e5497813065755e55f9e885b5812)
+        specifier: ^0.4.10
+        version: 0.4.10(89b4e5497813065755e55f9e885b5812)
       next:
         specifier: 15.3.3
         version: 15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -849,8 +849,23 @@ packages:
       eslint-plugin-unicorn: ^59.0.1
       eslint-plugin-unused-imports: ^4.0.0
 
-  '@plyaz/translations@1.1.0':
-    resolution: {integrity: sha512-D9IdxAGvkXaNLMmLjAOPWf0jnu7Ss/U8sxznPl14FgvX36Yi2+T4l7jDUa0DAqVxa6xwyyaeXn5twQrg6w6+TQ==}
+  '@plyaz/devtools@1.7.1':
+    resolution: {integrity: sha512-H1cqU/CEnVxvmff2V45Gt+Ibrnc5cgNujFLshLuJraEsyM9fGeByx1vgwffhSPoZOoX/WgdzMsWisUg32MERyQ==}
+    peerDependencies:
+      '@darraghor/eslint-plugin-nestjs-typed': ^6.6.0
+      '@typescript-eslint/eslint-plugin': ^8.0.0
+      '@typescript-eslint/parser': ^8.0.0
+      eslint: ^9.18.0
+      eslint-plugin-import: ^2.30.0
+      eslint-plugin-jsx-a11y: ^6.10.0
+      eslint-plugin-react: ^7.37.0
+      eslint-plugin-react-hooks: ^5.0.0
+      eslint-plugin-security: ^3.0.0
+      eslint-plugin-unicorn: ^59.0.1
+      eslint-plugin-unused-imports: ^4.0.0
+
+  '@plyaz/translations@1.2.0':
+    resolution: {integrity: sha512-0g5MqhXPjTz1DvL243agbX4Sb3jmRF85zJiJ9G9IQQBpqeqnH3OrdReYItg7iOuGRG84DcYgCx2wRwRdUPyR3g==}
     peerDependencies:
       '@nestjs/common': 11.1.2
       '@nestjs/core': 11.1.2
@@ -859,12 +874,23 @@ packages:
       react: 19.1.0
       reflect-metadata: 0.2.2
 
-  '@plyaz/types@2.0.0':
-    resolution: {integrity: sha512-ygcbvqXm1SvNP3B7zkH3OhbngLgrZA2kmnZX/5qpNUaZSLAyQx/TnRE4aGA3CaCx/BAYMaptV1CBUdcrWhS1RA==}
+  '@plyaz/types@1.1.3':
+    resolution: {integrity: sha512-3czK4XPVyIFKfq1Zyddc1mpDNjrJU/bi0R3NqjFvl/t06mK5CyOk9fKIrsn1xTpSG0z28+5jukH0JCgurRHrUw==}
     engines: {node: '>=22.4.0', pnpm: '>=8.0.0'}
+    peerDependencies:
+      next: '*'
+      react: '*'
+      react-dom: '*'
+    peerDependenciesMeta:
+      next:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
-  '@plyaz/ui@0.4.7':
-    resolution: {integrity: sha512-Cy186kJfRzYcL3lqUM32yeGh08Jp3VsRtBCffizBz2EA4c0iPdIEwM+RyKqhcJ4w4k/MW9DwI/So/41DL0geKA==}
+  '@plyaz/ui@0.4.10':
+    resolution: {integrity: sha512-a4T0T9s6qPo19q74wi8wQwOFooJ8csKbRQY86XtijnEjd17GePUvGE2ZmncPMcqu+JznqKz8co1aE6n/oCli+w==}
     engines: {node: '>=22.4.0', pnpm: '>=8.0.0'}
 
   '@radix-ui/number@1.1.1':
@@ -1377,8 +1403,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@20.19.6':
-    resolution: {integrity: sha512-uYssdp9z5zH5GQ0L4zEJ2ZuavYsJwkozjiUzCRfGtaaQcyjAMJ34aP8idv61QlqTozu6kudyr6JMq9Chf09dfA==}
+  '@types/node@20.19.7':
+    resolution: {integrity: sha512-1GM9z6BJOv86qkPvzh2i6VW5+VVrXxCLknfmTkWEqz+6DqosiY28XUWCTmBcJ0ACzKqx/iwdIREfo1fwExIlkA==}
 
   '@types/node@22.16.2':
     resolution: {integrity: sha512-Cdqa/eJTvt4fC4wmq1Mcc0CPUjp/Qy2FGqLza3z3pKymsI969TcZ54diNJv8UYUgeWxyb8FSbCkhdR6WqmUFhA==}
@@ -3195,8 +3221,8 @@ packages:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
 
-  libphonenumber-js@1.12.9:
-    resolution: {integrity: sha512-VWwAdNeJgN7jFOD+wN4qx83DTPMVPPAUyx9/TUkBXKLiNkuWWk6anV0439tgdtwaJDrEdqkvdN22iA6J4bUCZg==}
+  libphonenumber-js@1.12.10:
+    resolution: {integrity: sha512-E91vHJD61jekHHR/RF/E83T/CMoaLXT7cwYA75T4gim4FZjnM6hbJjVIGg7chqlSqRsSvQ3izGmOjHy1SQzcGQ==}
 
   lightningcss-darwin-arm64@1.30.1:
     resolution: {integrity: sha512-c8JK7hyE65X1MHMN+Viq9n11RRC7hgin3HhYKhrMyaXflk5GVplZ60IxyoVtzILeKr+xAJwg6zK6sjTBJ0FKYQ==}
@@ -5464,7 +5490,22 @@ snapshots:
       eslint-plugin-unused-imports: 4.1.4(@typescript-eslint/eslint-plugin@8.36.0(@typescript-eslint/parser@8.36.0(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.30.1(jiti@2.4.2))
       happy-dom: 18.0.1
 
-  '@plyaz/translations@1.1.0(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.2(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(nestjs-i18n@10.5.1(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.2(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(class-validator@0.14.2)(rxjs@7.8.2))(next-intl@4.3.4(next@15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)(typescript@5.8.3))(react@19.1.0)(reflect-metadata@0.2.2)':
+  '@plyaz/devtools@1.7.1(eab7f0d77d3b50312a5ec47140474ff6)':
+    dependencies:
+      '@darraghor/eslint-plugin-nestjs-typed': 6.7.0(@typescript-eslint/parser@8.36.0(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3))(class-validator@0.14.2)(eslint-import-resolver-typescript@3.10.1)(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3)
+      '@typescript-eslint/eslint-plugin': 8.36.0(@typescript-eslint/parser@8.36.0(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3)
+      '@typescript-eslint/parser': 8.36.0(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3)
+      eslint: 9.30.1(jiti@2.4.2)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.36.0(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.30.1(jiti@2.4.2))
+      eslint-plugin-jsx-a11y: 6.10.2(eslint@9.30.1(jiti@2.4.2))
+      eslint-plugin-react: 7.37.5(eslint@9.30.1(jiti@2.4.2))
+      eslint-plugin-react-hooks: 5.2.0(eslint@9.30.1(jiti@2.4.2))
+      eslint-plugin-security: 3.0.1
+      eslint-plugin-unicorn: 56.0.1(eslint@9.30.1(jiti@2.4.2))
+      eslint-plugin-unused-imports: 4.1.4(@typescript-eslint/eslint-plugin@8.36.0(@typescript-eslint/parser@8.36.0(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.30.1(jiti@2.4.2))
+      happy-dom: 18.0.1
+
+  '@plyaz/translations@1.2.0(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.2(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(nestjs-i18n@10.5.1(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.2(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(class-validator@0.14.2)(rxjs@7.8.2))(next-intl@4.3.4(next@15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)(typescript@5.8.3))(react@19.1.0)(reflect-metadata@0.2.2)':
     dependencies:
       '@nestjs/common': 11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.2(@nestjs/common@11.1.3(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -5475,11 +5516,15 @@ snapshots:
       react: 19.1.0
       reflect-metadata: 0.2.2
 
-  '@plyaz/types@2.0.0': {}
+  '@plyaz/types@1.1.3(next@15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    optionalDependencies:
+      next: 15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
-  '@plyaz/ui@0.4.7(89b4e5497813065755e55f9e885b5812)':
+  '@plyaz/ui@0.4.10(89b4e5497813065755e55f9e885b5812)':
     dependencies:
-      '@plyaz/devtools': 1.6.11(eab7f0d77d3b50312a5ec47140474ff6)
+      '@plyaz/devtools': 1.7.1(eab7f0d77d3b50312a5ec47140474ff6)
       '@radix-ui/react-select': 2.2.5(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.8)(react@19.1.0)
       class-variance-authority: 0.7.1
@@ -5925,7 +5970,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@20.19.6':
+  '@types/node@20.19.7':
     dependencies:
       undici-types: 6.21.0
 
@@ -6471,7 +6516,7 @@ snapshots:
   class-validator@0.14.2:
     dependencies:
       '@types/validator': 13.15.2
-      libphonenumber-js: 1.12.9
+      libphonenumber-js: 1.12.10
       validator: 13.15.15
 
   class-variance-authority@0.7.1:
@@ -7652,7 +7697,7 @@ snapshots:
 
   happy-dom@18.0.1:
     dependencies:
-      '@types/node': 20.19.6
+      '@types/node': 20.19.7
       '@types/whatwg-mimetype': 3.0.2
       whatwg-mimetype: 3.0.0
 
@@ -8055,7 +8100,7 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
-  libphonenumber-js@1.12.9: {}
+  libphonenumber-js@1.12.10: {}
 
   lightningcss-darwin-arm64@1.30.1:
     optional: true

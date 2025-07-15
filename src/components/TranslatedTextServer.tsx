@@ -12,34 +12,34 @@ interface TranslatedTextProps extends Omit<TextProps, 'children'> {
 
 /**
  * TranslatedText component for rendering translated text content.
- * 
+ *
  * This component renders translated text using the Text component from @plyaz/ui.
  * It's useful for simple text translations without HTML markup.
- * 
+ *
  * @param props - Component props
  * @param props.translationKey - The translation key to look up
  * @param props.translationOptions - Optional interpolation values for the translation
  * @param props.textProps - Additional Text component props
- * 
+ *
  * @example
  * ```tsx
  * // Basic usage
  * <TranslatedText translationKey="welcome_message" />
- * 
+ *
  * // With interpolation
- * <TranslatedText 
- *   translationKey="greeting" 
- *   translationOptions={{ name: "John" }} 
+ * <TranslatedText
+ *   translationKey="greeting"
+ *   translationOptions={{ name: "John" }}
  * />
- * 
+ *
  * // With Text component props
- * <TranslatedText 
- *   translationKey="error_message" 
- *   color="error" 
- *   weight="semibold" 
+ * <TranslatedText
+ *   translationKey="error_message"
+ *   color="error"
+ *   weight="semibold"
  * />
  * ```
- * 
+ *
  * @returns A Text component containing the translated content
  */
 const TranslatedText: React.FC<TranslatedTextProps> = ({
