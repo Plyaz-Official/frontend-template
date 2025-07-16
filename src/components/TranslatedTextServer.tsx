@@ -29,7 +29,7 @@ interface TranslatedTextProps extends Omit<TextProps, 'children'> {
  * // With interpolation
  * <TranslatedText
  *   translationKey="greeting"
- *   translationOptions={{ name: "John" }}
+ *   translationOptions={{ args: { name: "John" } }}
  * />
  *
  * // With Text component props
@@ -50,7 +50,7 @@ const TranslatedText: React.FC<TranslatedTextProps> = ({
   const t = useTranslations();
   const translated = t(
     translationKey,
-    translationOptions as Record<string, string | number | Date>
+    translationOptions?.args as Record<string, string | number | Date>
   );
   return <Text {...textProps}>{translated}</Text>;
 };

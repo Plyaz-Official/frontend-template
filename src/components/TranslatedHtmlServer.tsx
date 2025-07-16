@@ -28,7 +28,7 @@ interface TranslatedHtmlProps {
  * // Translation key: "click_here" = "Click <a href='{url}'>{text}</a>"
  * <TranslatedHtml
  *   translationKey="click_here"
- *   translationOptions={{ url: '/help', text: 'here' }}
+ *   translationOptions={{ args: { url: '/help', text: 'here' } }}
  * />
  */
 const TranslatedHtml: React.FC<TranslatedHtmlProps> = ({
@@ -40,7 +40,7 @@ const TranslatedHtml: React.FC<TranslatedHtmlProps> = ({
   const t = useTranslations();
   const translated = t(
     translationKey,
-    translationOptions as Record<string, string | number | Date>
+    translationOptions?.args as Record<string, string | number | Date>
   );
   return React.createElement(tag, { className }, translated);
 };
