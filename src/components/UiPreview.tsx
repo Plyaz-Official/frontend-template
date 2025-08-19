@@ -1,7 +1,6 @@
 'use client';
 import {
   Box,
-  Button,
   Container,
   ExternalLink,
   Flex,
@@ -21,9 +20,9 @@ import React from 'react';
 
 const UiPreview = () => {
   return (
-    <Box element='main' className='min-h-screen bg-white text-gray-900'>
+    <Box element='main' className='bg-white min-h-screen text-gray-900'>
       {/* Navigation */}
-      <Box element='header' className='border-b bg-black py-4 text-white'>
+      <Box element='header' className='bg-black py-4 border-b text-white'>
         <Box element='nav' className='px-6'>
           <Flex justify='between' align='center'>
             <Heading
@@ -56,9 +55,9 @@ const UiPreview = () => {
               ))}
               <button
                 className={`
-                  hidden rounded-lg bg-blue-600 px-4 py-2 text-white
+                  hidden rounded-lg bg-secondary px-4 py-2 text-white
                   transition-colors duration-200
-                  hover:bg-blue-700
+                  hover:bg-accent cursor-pointer
                   md:block
                 `}
               >
@@ -78,7 +77,7 @@ const UiPreview = () => {
           <SelectItem value='system'>System</SelectItem>
         </SelectContent>
       </Select>
-      <Button variant={'secondary'}>PLyaz</Button>
+
       {/* Hero Section */}
 
       <Section
@@ -118,8 +117,8 @@ const UiPreview = () => {
             <Flex gap='2' justify='center' wrap='wrap'>
               <button
                 className={`
-                  w-44 rounded-lg bg-blue-600 px-6 py-3 text-white transition
-                  hover:bg-blue-700
+                  w-44 rounded-lg bg-secondary px-6 py-3 text-white transition
+                  hover:bg-accent cursor-pointer
                 `}
               >
                 Get Started
@@ -317,7 +316,7 @@ const UiPreview = () => {
             md:flex-row
           `}
         >
-          <Heading element='h2' size='xl' className='text-center font-bold'>
+          <Heading element='h2' size='xl' className='font-bold text-center'>
             Ready to Get Started?
           </Heading>
           <Flex gap='2' justify='center' align='center' direction='col' className={`md:flex-row`}>
