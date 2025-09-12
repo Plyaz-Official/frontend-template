@@ -5,8 +5,9 @@ import { notFound } from 'next/navigation';
 import { hasLocale } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
-import Providers from 'src/components/Providers';
 import { routing } from 'src/i18n/routing';
+
+import { TranslationProvider } from '../../providers/translation.provider';
 
 export const metadata: Metadata = {
   title: 'Plyaz Fe Template',
@@ -25,12 +26,13 @@ export default async function RootLayout({
     notFound();
   }
   const messages = await getMessages();
+
   return (
-    <html lang={locale}>
+    <html lang={'es'}>
       <body>
-        <Providers messages={messages} locale={locale}>
+        <TranslationProvider messages={messages} locale={locale}>
           {children}
-        </Providers>
+        </TranslationProvider>
       </body>
     </html>
   );

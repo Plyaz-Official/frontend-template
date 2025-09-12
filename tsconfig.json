@@ -14,7 +14,7 @@
       ]
     },
     "plugins": [
-            {
+      {
         "name": "next"
       }
     ]
@@ -23,7 +23,8 @@
     "./src/**/*",
     "./tests/**/*",
     ".next/types/**/*.ts",
-    "*.ts"
+    "*.ts",
+    "./messages/**/*.json"
   ],
   "exclude": [
     "node_modules",

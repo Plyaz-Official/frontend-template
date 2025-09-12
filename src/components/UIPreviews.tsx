@@ -1,6 +1,8 @@
 'use client';
+
 import {
   Box,
+  Button,
   Container,
   ExternalLink,
   Flex,
@@ -17,12 +19,37 @@ import {
   Text,
 } from '@plyaz/ui';
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { ContactUsFormSchema, type ContactUsForm } from '@plyaz/errors';
+import { useTranslation } from '@plyaz/translations/frontend';
 
-const UiPreview = () => {
+export const UIPreviews = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting, isSubmitSuccessful },
+    reset,
+  } = useForm<ContactUsForm>({
+    resolver: zodResolver(ContactUsFormSchema),
+    mode: 'onBlur',
+    defaultValues: { name: '', email: '' },
+  });
+  const { t } = useTranslation();
+  const onSubmit = async (data: ContactUsForm) => {
+    try {
+      const value = 600;
+      console.info('submit', data);
+      await new Promise(r => setTimeout(r, value));
+      reset();
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
-    <Box element='main' className='bg-white min-h-screen text-gray-900'>
+    <Box className='bg-white min-h-screen text-gray-900'>
       {/* Navigation */}
-      <Box element='header' className='bg-black py-4 border-b text-white'>
+      <Box element='header' className='bg-black py-4 border-b h-16 text-white'>
         <Box element='nav' className='px-6'>
           <Flex justify='between' align='center'>
             <Heading
@@ -33,7 +60,7 @@ const UiPreview = () => {
                 md:text-xl
               `}
             >
-              UI Components
+              {t('component.UIComponent')}
             </Heading>
             <Flex align='center' gap='3' className='md:gap-3'>
               {['Portfolio', 'Dashboard', 'Blog'].map(item => (
@@ -137,7 +164,95 @@ const UiPreview = () => {
           </Stack>
         </Container>
       </Section>
+      <Box className='bg-white/80 shadow-xl backdrop-blur mx-auto p-6 border border-gray-100 rounded-2xl max-w-lg'>
+        <Heading element='h2' size='3xl' className='mb-1 font-semibold text-2xl'>
+          Contact Us
+        </Heading>
+        <Paragraph size='lg' className='mb-6 text-gray-500 text-sm'>
+          Leave your name and email — we’ll get back to you shortly.
+        </Paragraph>
 
+        <form onSubmit={handleSubmit(onSubmit)} noValidate className='space-y-8'>
+          {/* Name */}
+          <Box>
+            <label htmlFor='name' className='block mb-1 font-medium text-gray-700 text-sm'>
+              Name
+            </label>
+            <input
+              id='name'
+              {...register('name')}
+              placeholder='Your full name'
+              className={`w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-shadow
+              ${errors.name ? 'border-red-400' : 'border-gray-200'}`}
+              aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? 'name-error' : undefined}
+            />
+            {/* Always cast dynamic keys to Parameters<typeof t>[0] so TypeScript accepts them */} 
+            {errors.name && (
+              <Paragraph
+                size='lg'
+                id='name-error'
+                role='alert'
+                className='mt-1 text-red-600 text-sm'
+              >
+                
+                {t(`${errors.name.message}` as Parameters<typeof t>[0])}
+              </Paragraph>
+            )}
+          </Box>
+
+          {/* Email */}
+          {/* Always cast dynamic keys to Parameters<typeof t>[0] so TypeScript accepts them */}
+          <Box>
+            <label htmlFor='email' className='block mb-1 font-medium text-gray-700 text-sm'>
+              Email
+            </label>
+            <input
+              id='email'
+              type='email'
+              {...register('email')}
+              placeholder='you@example.com'
+              className={`w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-shadow
+              ${errors.email ? 'border-red-400' : 'border-gray-200'}`}
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? 'email-error' : undefined}
+            />
+            {errors.email && (
+              <Paragraph
+                size='lg'
+                id='email-error'
+                role='alert'
+                className='mt-1 text-red-600 text-sm'
+              >
+                {t(`${errors.email.message}` as Parameters<typeof t>[0])}
+              </Paragraph>
+            )}
+          </Box>
+
+          {/* Actions */}
+          <Box className='flex justify-between items-center gap-4'>
+            <Button
+              type='submit'
+              disabled={isSubmitting}
+              className='inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 px-5 py-2 rounded-lg font-medium text-white transition cursor-pointer'
+            >
+              {isSubmitting ? 'Sending…' : 'Send Message'}
+            </Button>
+
+            <Button
+              type='button'
+              onClick={() => reset()}
+              className='text-gray-600 text-sm hover:underline cursor-pointer'
+            >
+              Reset
+            </Button>
+          </Box>
+
+          {isSubmitSuccessful && (
+            <Box className='mt-3 text-green-700 text-sm'>Thanks — your message was sent!</Box>
+          )}
+        </form>
+      </Box>
       {/* Features Section */}
       <Section
         className={`
@@ -345,5 +460,3 @@ const UiPreview = () => {
     </Box>
   );
 };
-
-export default UiPreview;

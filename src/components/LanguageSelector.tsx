@@ -31,7 +31,7 @@ import { routing } from 'src/i18n/routing';
  * @returns A Select component with locale options
  */
 export default function LanguageSelectorWrapper() {
-  const t = useTranslations('components.LanguageSelector');
+  const t = useTranslations();
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();

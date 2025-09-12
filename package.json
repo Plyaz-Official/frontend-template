@@ -23,14 +23,19 @@
     "pnpm": ">=8.0.0"
   },
   "dependencies": {
-    "@plyaz/devtools": "^1.6.4",
+    "@hookform/resolvers": "^5.2.1",
+    "@plyaz/devtools": "^1.9.4",
+    "@plyaz/errors": "^1.0.2",
     "@plyaz/translations": "^1.4.0",
-    "@plyaz/types": "^1.4.1",
+    "@plyaz/types": "^1.7.8",
     "@plyaz/ui": "^0.7.0",
     "next": "15.4.7",
+    "deepmerge": "^4.3.1",
     "next-intl": "^4.3.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.62.0",
+    "zod": "4.1.5"
   },
   "devDependencies": {
     "@darraghor/eslint-plugin-nestjs-typed": "^6.6.2",

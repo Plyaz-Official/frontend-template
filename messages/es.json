@@ -1,0 +1,12 @@
+{
+  "errors": {
+    "form": {
+      "nameMissing": "Nombre faltante",
+      "emailInvalid": "Correo electrónico inválido"
+    }
+  },
+  "component": {
+  "UIComponent": "Componentes de UI"
+}
+
+}
