@@ -33,7 +33,7 @@
     "@hookform/resolvers": "^5.2.1",
     "@plyaz/devtools": "^1.9.4",
     "@plyaz/errors": "^1.0.2",
-    "@plyaz/translations": "^1.4.3",
+    "@plyaz/translations": "^1.4.4",
     "@plyaz/types": "^1.7.8",
     "@plyaz/ui": "^0.7.0",
     "deepmerge": "^4.3.1",

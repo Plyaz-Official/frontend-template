@@ -9,9 +9,15 @@
     "moduleResolution": "bundler",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/app/*"
-      ]
+      "@/*": ["./src/*"],
+      "@/components": ["./src/components"],
+      "@/public/*": ["./public/assets/*"],
+      "@/types": ["./src/types"],
+      "@/constants": ["./src/constants"],
+      "@/actions": ["./src/app/actions"],
+      "@/utils": ["./src/utils"],
+      "@/providers": ["./src/providers"],
+      "@/icons": ["./src/components/icons"]
     },
     "plugins": [
       {
