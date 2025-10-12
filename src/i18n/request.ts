@@ -1,6 +1,6 @@
 import { getRequestConfig } from 'next-intl/server';
 import { hasLocale } from 'next-intl';
-import { getSupportedLanguages, timeZone } from '@plyaz/translations';
+import { getSupportedLanguages, timeZone, resources } from '@plyaz/translations';
 import deepmerge from 'deepmerge';
 
 import { getMessageFallback } from './fallback';
@@ -11,11 +11,11 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const userMessages = (await import(`../../messages/${locale}.json`)).default;
   const defaultMessages = (await import(`../../messages/en.json`)).default;
   const messages = locale === 'en' ? defaultMessages : deepmerge(defaultMessages, userMessages);
-
+  const messagesWithResources = deepmerge(resources[locale], messages);
   return {
     getMessageFallback,
     locale,
     timeZone,
-    messages,
+    messages: messagesWithResources,
   };
 });
