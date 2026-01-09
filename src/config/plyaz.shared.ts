@@ -257,7 +257,8 @@ const baseConfig = {
     // Use /api for Next.js API routes (same-origin calls)
     // External URL can be configured via NEXT_PUBLIC_API_URL
     // Use || instead of ?? since env.apiUrl defaults to '' (empty string, which is falsy)
-    baseURL: env.apiUrl ?? '/api',
+    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+    baseURL: env.apiUrl || '/api',
     timeout: 120000, // 2 minutes - increased for file upload/download operations
     networkAware: {
       enabled: false,
