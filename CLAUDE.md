@@ -4,31 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Local-only backoffice for creating and managing templates used by `@plyaz/storage` and `@plyaz/notifications` packages. This editor writes directly to the linked package directories.
+Frontend template for building applications with the Plyaz ecosystem. Provides a pre-configured Next.js application with `@plyaz/core`, `@plyaz/store`, and other Plyaz packages integrated out of the box.
 
 **Architecture Note:** In development, this app uses Next.js API routes for backend operations. In production, all Plyaz apps connect to a NestJS backend microservice - the frontend configuration simply points to the external API URL instead of `/api`.
-
-### Template Types
-
-**Storage Templates** (`../Packages/storage/templates/`):
-- Document templates: invoices, receipts, reports, tax documents
-- Organized by locale: `{locale}/{category}/{template}.md`
-- Layouts: headers, footers, wrappers in `layouts/{locale}/`
-- Output formats: PDF, DOCX, Excel
-- Uses Handlebars syntax with frontmatter metadata
-
-**Storage Components** (`../Packages/storage/cli-templates/components/`):
-- Reusable YAML-defined components with HTML templates
-- Categories: basic, cards, certificates, contacts, events, gaming, headers, invoice, legal, resume, signatures, tables, ui
-- Each component has: variables, styling options, layout options
-- Format: YAML frontmatter + HTML with `<!-- component:name -->` markers
-
-**Notification Templates** (`../Packages/notifications/templates/`):
-- Email templates (HTML/MD): transactional, marketing, newsletters
-- SMS templates
-- Push notification templates
-- Layouts by channel: `layouts/{email|sms|push}/`
-- Frontmatter includes: subject, preheader, category, channel, layout config
 
 ## Commands
 

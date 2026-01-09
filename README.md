@@ -1,6 +1,6 @@
-# Plyaz Template Editor
+# Plyaz Frontend Template
 
-Local-only backoffice for creating and managing templates for `@plyaz/storage` and `@plyaz/notifications` packages.
+Frontend template for building applications with the Plyaz ecosystem. Provides a pre-configured Next.js application with `@plyaz/core`, `@plyaz/store`, and other Plyaz packages integrated out of the box.
 
 ## Quick Start
 
