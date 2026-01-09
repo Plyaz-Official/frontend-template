@@ -6,11 +6,12 @@ import { hasLocale } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
 import { routing } from 'src/i18n/routing';
-import { TranslationProvider } from '@/providers/translation-provider';
+import Providers from '@/components/Providers';
+import { StreamDevTools } from '@/components/StreamDevTools';
 
 export const metadata: Metadata = {
-  title: 'Plyaz Fe Template',
-  description: 'Plyaz Frontend Template',
+  title: 'Plyaz Template Editor',
+  description: 'Local backoffice for managing storage and notification templates',
 };
 
 export default async function RootLayout({
@@ -29,9 +30,10 @@ export default async function RootLayout({
   return (
     <html lang={'es'}>
       <body>
-        <TranslationProvider messages={messages} locale={locale}>
+        <Providers messages={messages} locale={locale}>
           {children}
-        </TranslationProvider>
+          <StreamDevTools />
+        </Providers>
       </body>
     </html>
   );

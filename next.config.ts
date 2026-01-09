@@ -1,7 +1,15 @@
-import { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
-
-const nextConfig: NextConfig = {};
+import { withPlyazNextConfig } from '@plyaz/core/frameworks/nextjs/config';
 
 const withNextIntl = createNextIntlPlugin();
-export default withNextIntl(nextConfig);
+
+export default withNextIntl(
+  withPlyazNextConfig({
+    // Increase body size limit for large file uploads
+    experimental: {
+      serverActions: {
+        bodySizeLimit: '100mb',
+      },
+    },
+  })
+);

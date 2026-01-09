@@ -17,7 +17,9 @@
       "@/actions": ["./src/app/actions"],
       "@/utils": ["./src/utils"],
       "@/providers": ["./src/providers"],
-      "@/icons": ["./src/components/icons"]
+      "@/icons": ["./src/components/icons"],
+      "@/config/*": ["./src/config/*"],
+      "@/core/*": ["./src/core/*"]
     },
     "plugins": [
       {

@@ -1,5 +1,6 @@
 'use client';
 
+import type { SupportedLanguage } from '@plyaz/types';
 import { LanguageSelector } from '@plyaz/ui';
 import type { NamespaceKeys } from 'next-intl';
 import { useLocale, useTranslations } from 'next-intl';
@@ -40,11 +41,7 @@ export default function LanguageSelectorWrapper() {
 
   const handleChange = (nextLocale: string) => {
     startTransition(() => {
-      router.replace(
-        // @ts-expect-error - params is not defined in the type
-        { pathname, params },
-        { locale: nextLocale }
-      );
+      router.replace({ pathname, query: params }, { locale: nextLocale as SupportedLanguage });
     });
   };
 

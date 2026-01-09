@@ -36,15 +36,10 @@ export const UIPreviews = () => {
     defaultValues: { name: '', email: '' },
   });
   const { t } = useTranslation();
-  const onSubmit = async (data: ContactUsForm) => {
-    try {
-      const value = 600;
-      console.info('submit', data);
-      await new Promise(r => setTimeout(r, value));
-      reset();
-    } catch (err) {
-      console.error(err);
-    }
+  const onSubmit = async () => {
+    const value = 600;
+    await new Promise(r => setTimeout(r, value));
+    reset();
   };
   return (
     <Box className='bg-white min-h-screen text-gray-900'>
@@ -187,7 +182,7 @@ export const UIPreviews = () => {
               aria-invalid={!!errors.name}
               aria-describedby={errors.name ? 'name-error' : undefined}
             />
-            {/* Always cast dynamic keys to Parameters<typeof t>[0] so TypeScript accepts them */} 
+            {/* Always cast dynamic keys to Parameters<typeof t>[0] so TypeScript accepts them */}
             {errors.name && (
               <Paragraph
                 size='lg'
@@ -195,7 +190,6 @@ export const UIPreviews = () => {
                 role='alert'
                 className='mt-1 text-red-600 text-sm'
               >
-                
                 {t(`${errors.name.message}` as Parameters<typeof t>[0])}
               </Paragraph>
             )}

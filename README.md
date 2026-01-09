@@ -1,133 +1,249 @@
-# 🧱 Plyaz Frontend Template
+# Plyaz Template Editor
 
-Welcome to the Plyaz Frontend Template — a flexible, scalable foundation for building frontend applications at Plyaz. This template supports SSR, strict linting rules, shared configuration via `@plyaz/devtools`, and first-class support for CI/CD and modular architecture.
+Local-only backoffice for creating and managing templates for `@plyaz/storage` and `@plyaz/notifications` packages.
 
-This template is ideal for creating:
-- Landing pages
-- Web applications
-- Micro frontends
-- Dashboard tools (e.g. backoffice portals)
-
----
-
-## 🚀 Quick Start
-
-### 🔁 Option 1: Use from GitHub Template
-
-1. Go to the [`@plyaz/fe-template`](https://github.com/Plyaz-Official/frontend-template) repository.
-2. Click **“Use this template”** on GitHub.
-3. Choose your new repo name (e.g. `backoffice`, `landing`, `scout-hub`).
-4. Clone your new repo and start building.
-
-### 🖥 Option 2: Clone Manually
+## Quick Start
 
 ```bash
-git clone https://github.com/Plyaz-Official/frontend-template.git @plyaz/backoffice
-cd @plyaz/backoffice
+# Install dependencies
 pnpm install
+
+# Copy environment file and configure
+cp .env.example .env
+
+# Start development server
 pnpm dev
-````
-
-Then:
-
-* Rename `"name"` in `package.json` to match your project (e.g. `"@plyaz/backoffice"`)
-* Update metadata (README, CI/CD name, etc.)
-
----
-
-## 📦 Included Packages
-
-| Package                                                         | Purpose                                                               |
-| --------------------------------------------------------------- | --------------------------------------------------------------------- |
-| [`next`](https://nextjs.org/)                                   | Core framework (SSR, routing, API routes)                             |
-| [`react`](https://react.dev/)                                   | Frontend                                                              |
-| [`@plyaz/devtools`](https://github.com/Plyaz-Official/devtools) | Shared dev configuration (linting, formatting, testing, CI templates) |
-
----
-
-## 🧪 Scripts & Commands
-
-```json
-{
-  "dev": "next dev --turbopack",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint",
-  "lint:fix": "next lint --fix",
-  "test": "vitest",
-  "format": "prettier --write './**/*.{js,ts,tsx,js,jsx,mjs,cjs}'",
-  "format:check": "prettier --check './**/*.{js,ts,tsx,js,jsx,mjs,cjs}'",
-  "type:check": "tsc --noEmit"
-}
 ```
 
+Open [http://localhost:3000](http://localhost:3000) - this app is for **local development only**.
+
+## What This Editor Does
+
+This app provides a visual interface to create and edit:
+
+### Storage Templates
+- **Documents**: PDF, DOCX, Excel generation (invoices, receipts, reports, tax documents)
+- **Runtime Templates**: Markdown/HTML templates with Handlebars syntax
+- **Reusable Components**: YAML-defined building blocks (headers, footers, tables, cards, signatures, etc.)
+- **Layouts**: Headers, footers, and wrappers for consistent document styling
+
+### Notification Templates
+- **Email**: HTML/Markdown transactional and marketing emails
+- **SMS**: Text message templates
+- **Push Notifications**: In-app notification templates
+- **Layouts**: Channel-specific headers and footers
+
+## Core Features Demo
+
+Visit **[http://localhost:3000/en/example](http://localhost:3000/en/example)** for a comprehensive demonstration of all Plyaz Core features:
+
+### What the Example Page Demonstrates
+
+| Feature | Description |
+|---------|-------------|
+| **Storage API** | Upload files (single/bulk), download, signed URLs, delete |
+| **Document Generation** | Generate PDF/DOCX/Excel from templates with live preview |
+| **Notifications** | Email sending, in-app notifications, SMS templates |
+| **Streaming (SSE)** | Real-time upload/download progress via Server-Sent Events |
+| **Error Handling** | Validation errors, error store, error boundaries |
+| **Event System** | Service events, global events, event subscriptions |
+| **Store Integration** | Files store, notifications store, error store, feature flags |
+| **Progress Tracking** | Upload/download progress bars with speed metrics |
+| **Service Lifecycle** | Health checks, polling, service registration |
+
+### API Endpoints Tested
+
+```
+# Examples (CRUD)
+GET/POST    /api/examples
+GET/PATCH/DELETE /api/examples/:id
+POST/DELETE /api/examples/bulk
+
+# Files (Storage)
+POST        /api/upload
+POST        /api/upload/bulk
+GET         /api/files
+GET/DELETE  /api/files/:id
+GET         /api/files/:id/download
+GET         /api/files/:id/signed-url
+POST        /api/generate-document
+
+# Notifications
+GET         /api/notifications
+DELETE      /api/notifications/:id
+POST        /api/examples/email
+
+# Streaming
+GET         /api/events/stream (SSE)
+
+# Error Demos
+GET         /api/examples/errors/single
+GET         /api/examples/errors/array
+```
+
+### Hooks Demonstrated
+
+```typescript
+// File operations
+useFileUpload(), useFileDownload(), useFile(), useFileDelete()
+useAllFileProgress(), useUploadProgress(), useDownloadProgress()
+
+// Streaming
+useStreamConnected(), useStreamMessages(), useStreamConnectionId()
+
+// Stores
+useFilesStore(), useNotificationsStore(), useErrors(), useFeatureFlags()
+
+// Core
+usePlyaz(), usePlyazReady(), useService(), useEvents()
+```
+
+## Template Locations
+
+Templates are written directly to the linked packages:
+
+| Package | Path | Content |
+|---------|------|---------|
+| `@plyaz/storage` | `../Packages/storage/templates/` | Document templates by locale |
+| `@plyaz/storage` | `../Packages/storage/cli-templates/` | Components, layouts, configs |
+| `@plyaz/notifications` | `../Packages/notifications/templates/` | Email, SMS, push templates |
+
+## Template Format
+
+All templates use:
+- **YAML frontmatter** for metadata (name, category, locale, layout, outputFormat)
+- **Handlebars templating**: `{{variable}}`, `{{#each items}}`, `{{#if condition}}`
+- **Built-in helpers**: `{{formatCurrency amount}}`, `{{formatDate date}}`, `{{multiply a b}}`
+
+### Example Storage Template
+```markdown
+---
+name: standard-invoice
+title: Invoice
+category: invoices
+locale: en
+layout: invoice
+outputFormat: pdf
 ---
 
-## 🛠 Dev Requirements
+## Bill To
+**{{customerName}}**
+{{customerAddress}}
 
-* [Node.js v22.4.0+](https://nodejs.org/)
-* [pnpm v8+](https://pnpm.io/)
-* [VSCode](https://code.visualstudio.com/) with recommended extensions
-* [@plyaz/devtools](https://github.com/Plyaz-Official/devtools) for linting, formatting, and CI standards
+## Items
+| Description | Qty | Price |
+|-------------|-----|-------|
+{{#each items}}
+| {{description}} | {{quantity}} | {{formatCurrency unitPrice}} |
+{{/each}}
+```
 
+### Example Notification Template
+```markdown
+---
+subject: "Order #{{orderNumber}} Confirmed"
+category: transactional
+channel: email
+layout: transactional
 ---
 
-## 📏 Conventions & Standards
+Hi **{{customerName}}**,
 
-This template is pre-configured to match Plyaz engineering standards:
+Your order has been confirmed!
 
-* ✅ ESLint + Prettier from `@plyaz/devtools`
-* ✅ TypeScript strict mode
-* ✅ Vitest for unit testing
-* ✅ GitHub Actions-ready CI/CD config (if required)
-* ✅ Future-ready for Chromatic, Storybook, and e2e testing
+{{#each items}}
+- {{name}} x{{quantity}}
+{{/each}}
+```
 
----
+## Architecture
 
-## 📦 Publish/Refactor Guide
+This app uses `@plyaz/core` as the central orchestrator, following standard Plyaz architecture patterns.
 
-When initializing a new frontend repo:
+### Development vs Production
 
-* [ ] Rename `"name"` in `package.json` from `@plyaz/fe-template` → `@plyaz/{your-app}`
-* [ ] Confirm project title, description, and Vercel name match repo
-* [ ] Ensure `.npmrc` includes `@plyaz:registry=https://npm.pkg.github.com/`
-* [ ] `pnpm install` to install modules:
-  * `@plyaz/devtools` - Most important to run the app
-* [ ] Confirm env setup (`.env.local`, etc.) is correct
-* [ ] Set `GITHUB_TOKEN` in GitHub Secrets for CI usage
+| Aspect | Development | Production |
+|--------|-------------|------------|
+| Backend | Next.js API routes | NestJS microservice |
+| API Base | `/api` | External URL |
+| Streaming | `/api/events/stream` | External SSE endpoint |
 
----
+In production, Plyaz apps connect to a **NestJS backend microservice** - the frontend configuration simply points to the external API URL.
 
-## 🧩 Shared Configuration
+### Key Dependencies
+- `@plyaz/core` - Core provider, services, streaming
+- `@plyaz/store` - Zustand state management and hooks
+- `@plyaz/storage` (linked) - Document generation engine
+- `@plyaz/notifications` (linked) - Notification template engine
+- `@plyaz/ui` - UI component library
+- `@plyaz/types` - Shared TypeScript types
+- `@plyaz/errors` - Error handling utilities
 
-This repo uses all shared tooling from [`@plyaz/devtools`](https://github.com/Plyaz-Official/devtools). That includes:
+### Configuration Files
 
-* Base `tsconfig`, `.eslintrc`, `.prettierrc`, `next.config.ts`, `vitest.config.ts`, `vitest.setup.ts`
-* GitHub Actions CI/CD templates
-* Storybook + Chromatic preview config (if needed)
+```
+src/config/
+├── env.ts              # Environment variables
+├── plyaz.shared.ts     # Shared config (frontend + backend)
+├── plyaz.frontend.ts   # Client-only config
+└── plyaz.backend.ts    # Server-only config (Next.js API routes)
+```
 
-🟡 Always make sure you’re using the **latest `@plyaz/devtools` version**. If tooling changes, this repo should upgrade accordingly to stay aligned with the latest standards.
+## Scripts
 
----
+```bash
+pnpm dev          # Start dev server (Turbopack)
+pnpm build        # Production build
+pnpm lint         # Run ESLint
+pnpm lint:fix     # Fix ESLint issues
+pnpm test         # Run tests
+pnpm test:watch   # Run tests in watch mode
+pnpm type:check   # TypeScript checking
+pnpm format       # Format with Prettier
+```
 
-## 🌐 Deployment
+## Environment Variables
 
-By default, this template is Vercel-ready:
+Copy `.env.example` to `.env` and configure:
 
-* Add your repo on Vercel
-* Configure `main`, `dev`, or `staging` as deployment branches
-* Set up environment variables in the Vercel dashboard
+```bash
+# Required for storage
+SUPABASE_URL=
+SUPABASE_SERVICE_ROLE_KEY=
+SUPABASE_STORAGE_BUCKET=
 
----
+# Or Cloudflare R2
+CLOUDFLARE_ACCOUNT_ID=
+R2_ACCESS_KEY_ID=
+R2_SECRET_ACCESS_KEY=
+R2_BUCKET_NAME=
 
-## 🤝 Contributing
+# Required for notifications
+INFOBIP_API_KEY=
+INFOBIP_BASE_URL=
+FROM_EMAIL=
+FROM_NAME=
 
-When starting a new Plyaz frontend app, follow this template strictly to maintain consistency across teams. If changes are required, update this template for others to benefit.
+# Or SendGrid
+SENDGRID_API_KEY=
 
-For internal team standards, visit the [Plyaz Confluence Documentation](https://plyaz.atlassian.net/wiki/spaces/SD/overview).
+# Optional
+DATABASE_URL=
+REDIS_URL=
+ENCRYPTION_KEY=
+```
 
----
+## Requirements
 
-## 🧠 License & Ownership
+- Node.js >= 22.4.0
+- pnpm >= 8.0.0
+- Linked packages: `@plyaz/storage`, `@plyaz/notifications`
 
-This repository is internal to the Plyaz platform. All components, utilities, and configs are governed by the Plyaz engineering guidelines.
+## Documentation
+
+See [CLAUDE.md](./CLAUDE.md) for detailed architecture documentation including:
+- Domain services pattern
+- API route patterns
+- Streaming architecture
+- Store integration
+- Production deployment
