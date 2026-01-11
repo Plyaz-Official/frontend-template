@@ -9,6 +9,7 @@ import { PlyazProvider } from '@plyaz/core/frontend';
 import { useRootStore } from '@plyaz/store';
 
 import { frontendConfig } from '@/config/plyaz.frontend';
+import { DevtoolsProvider } from './DevtoolsProvider';
 
 // Fallback to UTC if timeZone not configured in @plyaz/translations
 const timeZone = configuredTimeZone || 'UTC';
@@ -33,7 +34,7 @@ export default function Providers({
           onReady={services => services.getServiceKeys()}
           onError={err => err}
         >
-          {children}
+          <DevtoolsProvider>{children}</DevtoolsProvider>
         </PlyazProvider>
       </TranslationProvider>
     </NextIntlClientProvider>

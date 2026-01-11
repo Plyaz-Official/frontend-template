@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "../node_modules/@plyaz/ui/dist/ui.css";
 @import "../node_modules/@plyaz/ui/styles/main.css";
+@import "@plyaz/devtools-extension/styles.css";
 @import "tailwindcss";
 
 
